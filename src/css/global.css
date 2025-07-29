@@ -1437,3 +1437,43 @@ table th:last-child {
 .custom-shadow{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
+
+  .quote:after{
+    background-color: #f38112;
+border-radius: 2px;
+bottom: .5rem;
+content: "";
+position: absolute;
+top: .5rem;
+width: 4px;
+}
+
+.list-check li {
+
+padding-left: 30px;
+position: relative;
+line-height: 26px;
+}
+
+.list-check li:before {
+content: "";
+position: absolute;
+left: 0;
+background-image: url("../img/check.svg");
+background-size: cover;
+width: 20px;
+height: 20px;
+top: 5px;
+}
+
+@media(max-width: 1024px) {
+.list-check li {
+
+padding-left: 26px;
+} 
+.list-check li:before {
+width: 18px;
+height: 18px;
+top: 4px
+}
+}
