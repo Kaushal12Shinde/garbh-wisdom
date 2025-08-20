@@ -19,8 +19,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/tailwind.css" />
   </head>
+  <style>
+    
+.t-slider {
+    position: relative;
+    width: 100%;
+  }
+  
+  .t-slider .swiper {
+    padding-bottom: 60px;
+  }
+  
+  
+  
+  
+  /* Pagination */
+  .t-slider .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #999;
+    opacity: 0.5;
+  }
+  
+  .t-slider .swiper-pagination-bullet-active {
+    background: #f38112;
+    opacity: 1;
+  }
+  
+
+  </style>
   <body class="bg-primary">
     <header>
       <nav
@@ -70,7 +100,7 @@
                   <div class="mt-auto lg:hidden inline-block">
                     <a
                       href="#!"
-                      class="button rounded-full py-[12px] px-[36px] bg-secondary w-full lg:min-w-[160px] inline-block text-white text-16 leading-[1.5] font-semibold"
+                      class="button rounded-full py-[12px] px-[36px] bg-dorange w-full lg:min-w-[160px] inline-block text-white text-16 leading-[1.5] font-semibold"
                     >
                       <div class="relative overflow-hidden">
                         <span class="button-content">Start Your Journey</span>
@@ -82,10 +112,10 @@
               </div>
             </div>
 
-            <div class="lg:inline-block hidden">
+            <div class="!hidden lg:!inline-block">
               <a
                 href="#!"
-                class="button rounded-full py-[12px] px-[36px] bg-secondary w-full lg:min-w-[160px] inline-block text-white text-16 leading-[1.5] font-semibold"
+                class="button rounded-full py-[12px] px-[36px] bg-dorange w-full lg:min-w-[160px] inline-block text-white text-16 leading-[1.5] font-semibold"
               >
                 <div class="relative overflow-hidden">
                   <span class="button-content">Start Your Journey</span>
@@ -118,7 +148,7 @@
               <div class="w-[90%] md:w-fit md:mt-4 flex items-center gap-2 mx-auto md:mx-0">
                 <a
                   href="#!"
-                  class="button py-[16px] px-[40px] lg:px-[32px] rounded-[50px] w-full bg-secondary inline-block text-white font-semibold text-14 leading-none"
+                  class="button py-[16px] px-[40px] lg:px-[32px] rounded-[50px] w-full bg-dorange inline-block text-white font-semibold text-14 leading-none"
                 >
                   <div class="relative overflow-hidden">
                     <span class="button-content whitespace-nowrap">Start Your Journey</span>
@@ -277,6 +307,396 @@
           </div>
         </div>
       </section>
+      <section class="py-[72px] lg:py-[100px]">
+        <div class="container text-secondary">
+          <div class="flex items-center justify-center overflow-hidden">
+            <!-- <div class="flex items-center">
+              <div class="w-[165px] h-[2px] bg-primary mr-[-10px]"></div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="33"
+                height="33"
+                viewBox="0 0 33 33"
+                fill="none"
+              >
+                <path
+                  d="M19.4162 7.98501C19.8609 8.58238 20.1761 9.26602 20.3414 9.99219C21.0509 9.81755 21.7868 9.77703 22.5112 9.8727C23.5794 10.0263 24.6001 10.5459 25.1629 11.5473C25.7248 12.5482 25.638 13.692 25.2137 14.6833C24.94 15.3209 24.5177 15.9308 23.9799 16.4745C24.5143 16.9928 24.9344 17.6172 25.2132 18.3075C25.621 19.3448 25.6478 20.5282 25.0436 21.5464C24.4425 22.5595 23.399 23.1031 22.3002 23.2441C21.5832 23.3311 20.856 23.2711 20.163 23.0678C19.9644 23.7883 19.6365 24.4449 19.2027 24.984C18.5087 25.8478 17.5031 26.4569 16.3253 26.4429C15.1395 26.4288 14.144 25.7882 13.4712 24.9017C13.0267 24.3045 12.7118 23.621 12.5468 22.895C11.8033 23.0702 11.0622 23.1141 10.3762 23.014C9.30801 22.8604 8.28728 22.3408 7.7245 21.3394C7.16257 20.3385 7.25029 19.1952 7.67368 18.2034C7.96965 17.5346 8.3881 16.9271 8.90746 16.4122C8.37322 15.8938 7.95316 15.2695 7.67417 14.5793C7.26642 13.542 7.23954 12.3586 7.84374 11.3403C8.44488 10.3273 9.48787 9.78451 10.5872 9.64263C11.304 9.55521 12.0311 9.61474 12.7241 9.81759C12.9108 9.12026 13.2375 8.46827 13.6844 7.90135C14.3787 7.03891 15.3843 6.42981 16.5629 6.44429C17.7474 6.45874 18.7433 7.09855 19.4162 7.98501ZM18.4849 13.0034C17.5726 12.462 16.4825 12.3053 15.4546 12.5676C14.4267 12.8299 13.5451 13.4898 13.0037 14.4021C12.4623 15.3145 12.3056 16.4045 12.5679 17.4324C12.8302 18.4604 13.4901 19.342 14.4025 19.8833C15.3148 20.4247 16.4048 20.5815 17.4328 20.3191C18.4607 20.0568 19.3423 19.3969 19.8837 18.4846C20.425 17.5722 20.5818 16.4822 20.3195 15.4543C20.0572 14.4264 19.3972 13.5447 18.4849 13.0034ZM17.4643 14.7234C17.9205 14.994 18.2504 15.4349 18.3816 15.9488C18.5127 16.4628 18.4344 17.0078 18.1637 17.464C17.893 17.9201 17.4522 18.2501 16.9382 18.3812C16.4243 18.5124 15.8793 18.434 15.4231 18.1633C14.9669 17.8927 14.637 17.4519 14.5058 16.9379C14.3746 16.4239 14.453 15.8789 14.7237 15.4228C14.9944 14.9666 15.4352 14.6366 15.9492 14.5055C16.4631 14.3743 17.0081 14.4527 17.4643 14.7234Z"
+                  fill="#C8A26B"
+                />
+              </svg>
+            </div> -->
+            <h1 class="font-marcellus text-24 md:text-[34px] !font-medium text-center text-richblack">
+            The 7 Core Principles <br> of
+            Garbh Wisdom
+            </h1>
+            <!-- <div class="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="33"
+                height="33"
+                viewBox="0 0 33 33"
+                fill="none"
+              >
+                <path
+                  d="M19.4162 7.98501C19.8609 8.58238 20.1761 9.26602 20.3414 9.99219C21.0509 9.81755 21.7868 9.77703 22.5112 9.8727C23.5794 10.0263 24.6001 10.5459 25.1629 11.5473C25.7248 12.5482 25.638 13.692 25.2137 14.6833C24.94 15.3209 24.5177 15.9308 23.9799 16.4745C24.5143 16.9928 24.9344 17.6172 25.2132 18.3075C25.621 19.3448 25.6478 20.5282 25.0436 21.5464C24.4425 22.5595 23.399 23.1031 22.3002 23.2441C21.5832 23.3311 20.856 23.2711 20.163 23.0678C19.9644 23.7883 19.6365 24.4449 19.2027 24.984C18.5087 25.8478 17.5031 26.4569 16.3253 26.4429C15.1395 26.4288 14.144 25.7882 13.4712 24.9017C13.0267 24.3045 12.7118 23.621 12.5468 22.895C11.8033 23.0702 11.0622 23.1141 10.3762 23.014C9.30801 22.8604 8.28728 22.3408 7.7245 21.3394C7.16257 20.3385 7.25029 19.1952 7.67368 18.2034C7.96965 17.5346 8.3881 16.9271 8.90746 16.4122C8.37322 15.8938 7.95316 15.2695 7.67417 14.5793C7.26642 13.542 7.23954 12.3586 7.84374 11.3403C8.44488 10.3273 9.48787 9.78451 10.5872 9.64263C11.304 9.55521 12.0311 9.61474 12.7241 9.81759C12.9108 9.12026 13.2375 8.46827 13.6844 7.90135C14.3787 7.03891 15.3843 6.42981 16.5629 6.44429C17.7474 6.45874 18.7433 7.09855 19.4162 7.98501ZM18.4849 13.0034C17.5726 12.462 16.4825 12.3053 15.4546 12.5676C14.4267 12.8299 13.5451 13.4898 13.0037 14.4021C12.4623 15.3145 12.3056 16.4045 12.5679 17.4324C12.8302 18.4604 13.4901 19.342 14.4025 19.8833C15.3148 20.4247 16.4048 20.5815 17.4328 20.3191C18.4607 20.0568 19.3423 19.3969 19.8837 18.4846C20.425 17.5722 20.5818 16.4822 20.3195 15.4543C20.0572 14.4264 19.3972 13.5447 18.4849 13.0034ZM17.4643 14.7234C17.9205 14.994 18.2504 15.4349 18.3816 15.9488C18.5127 16.4628 18.4344 17.0078 18.1637 17.464C17.893 17.9201 17.4522 18.2501 16.9382 18.3812C16.4243 18.5124 15.8793 18.434 15.4231 18.1633C14.9669 17.8927 14.637 17.4519 14.5058 16.9379C14.3746 16.4239 14.453 15.8789 14.7237 15.4228C14.9944 14.9666 15.4352 14.6366 15.9492 14.5055C16.4631 14.3743 17.0081 14.4527 17.4643 14.7234Z"
+                  fill="#C8A26B"
+                />
+              </svg>
+              <div class="w-[165px] h-[2px] bg-primary ml-[-10px]"></div>
+            </div> -->
+          </div>
+          <div class="relative mt-[40px] md:mt-[60px] max-w-[1010px] mx-auto">
+            <div
+              class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full flex justify-center"
+            >
+              <!-- <img
+                class="absolute lg:w-[568px] w-full lg:h-[568px] h-auto top-[-1%] lg:top-[-10%] z-0"
+                src="img/feminine/yoga-benifits-bg.png"
+                alt=""
+              /> -->
+              <img
+                class="max-w-[300px] relative z-[1]"
+                src="img/garbh-wisdom-logo.webp"
+                alt=""
+              />
+            </div>
+            <div class="flex justify-center">
+              <div class="flex flex-col items-center">
+                <img src="img/2-trimester.webp" class="w-[80px]" alt="" />
+                <h2 class="text-18 md:text-[22px] font-semibold font-marcellus text-dorange my-1">
+                  Garbh Vichaar
+                </h2>
+                <p class="text-16 max-w-[260px] text-center tracking-[0.2px] leading-[25px]">
+                  Thought cleansing and mental strengthening through
+                  conscious awareness and mindset work
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex justify-between mt-5 lg:mt-0 items-baseline lg:item-center"
+            >
+              <div class="flex flex-col items-center">
+                <img src="img/2-trimester.webp" class="w-[80px]" alt="" />
+                <h2 class="text-18 md:text-[22px] font-semibold font-marcellus text-dorange my-1">
+                  Garbh Aahar
+                </h2>
+                <p class="text-16 max-w-[260px] text-center tracking-[0.2px] leading-[25px]">
+                  Nourishment aligned with each trimester to support
+                  baby's growth and mother's vitality
+                </p>
+              </div>
+              <div class="flex flex-col items-center">
+                <img src="img/2-trimester.webp" class="w-[80px]" alt="" />
+                <h2 class="text-18 md:text-[22px] font-semibold font-marcellus text-dorange my-1">
+                  Garbh Vyavhar
+                </h2>
+                <p class="text-16 max-w-[260px] text-center tracking-[0.2px] leading-[25px]">
+                  Mindful behavior and emotional harmony to shape a
+                  nourishment inner environment
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex justify-between mt-4 lg:mt-[100px] items-baseline lg:item-center"
+            >
+              <div class="flex flex-col items-center">
+                <img src="img/2-trimester.webp" class="w-[80px]" alt="" />
+                <h2 class="text-18 md:text-[22px] font-semibold font-marcellus text-dorange my-1">
+                  Garbh Naad
+                </h2>
+                <p class="text-16 max-w-[260px] text-center tracking-[0.2px] leading-[25px]">
+                  Use of mantras, music, and sound vibrations to stimulate Fetal
+                  Intelligence and calm the mother.
+                </p>
+              </div>
+              <div class="flex flex-col items-center">
+                <img src="img/2-trimester.webp" class="w-[80px]" alt="" />
+                <h2 class="text-18 md:text-[22px] font-semibold font-marcellus text-dorange my-1">
+                  Garbhini Paricharya
+                </h2>
+                <p class="text-16 max-w-[260px] text-center tracking-[0.2px] leading-[25px]">
+                  Ancient Ayurvedic self-care rituals tailored for
+                  pregnancy wellness and dosha balance.
+                </p>
+              </div>
+            </div>
+            <div class="flex justify-center mt-4 lg:mt-0">
+              <div class="flex flex-col items-center">
+                <img src="img/2-trimester.webp" class="w-[80px]" alt="" />
+                <h2 class="text-18 md:text-[22px] font-semibold font-marcellus text-dorange my-1">
+                  Garbh Vichaar
+                </h2>
+                <p class="text-16 max-w-[260px] text-center tracking-[0.2px] leading-[25px]">
+                  Thought cleansing and mental strengthening through
+                  conscious awareness and mindset work
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="timeline__cover">
+        <div class="container">
+          <h1 class="font-marcellus text-24 md:text-[34px] !font-medium text-center text-richblack">The Garbh Wisdom Journey</h1>
+          <div class="timeline mt-[50px]">
+            <ul>
+          <li>
+                    <div class="content">
+                        <div class="badge py-[6px] px-[20px] text-14 md:text-16 text-white bg-richblack">Garbh Daan</div>
+                        <h3 class="text-20 md:text-[24px] font-marcellus text-dorange">Pre-Conception</h3>
+                        <p class="text-richblack text-16 md:text-18 tracking-[0.2px] leading-[26px]">Womb preparation through food, intention, and visualization</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content">
+                        <div class="badge py-[6px] px-[20px] text-14 md:text-16 text-white bg-richblack">Weeks 1–12</div>
+                        <h3 class="text-20 md:text-[24px] font-marcellus text-dorange">First Trimester</h3>
+                        <p class="text-richblack text-16 md:text-18 tracking-[0.2px] leading-[26px]">Gentle movement, Garbh Aahar,
+                          weekly affirmations & baby bonding</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content">
+                        <div class="badge py-[6px] px-[20px] text-14 md:text-16 text-white bg-richblack">Weeks 13–27</div>
+                        <h3 class="text-20 md:text-[24px] font-marcellus text-dorange">Second Trimester</h3>
+                        <p class="text-richblack text-16 md:text-18 tracking-[0.2px] leading-[26px]">Full prenatal yoga, Garbh Sanskar
+                          Workshop, fetal development
+                          insights, Garbh Naad & journaling</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content">
+                        <div class="badge py-[6px] px-[20px] text-14 md:text-16 text-white bg-richblack">Weeks 28–40</div>
+                        <h3 class="text-20 md:text-[24px] font-marcellus text-dorange">Third Trimester</h3>
+                        <p class="text-richblack text-16 md:text-18 tracking-[0.2px] leading-[26px]">Labor-prep yoga, birth planning,
+                          Garbh Samvaad, partner connection</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content">
+                        <!-- <div class="badge py-[6px] px-[20px] text-14 md:text-16 text-white bg-richblack">STEP 5</div> -->
+                        <h3 class="text-20 md:text-[24px] font-marcellus text-dorange">Birth Partner
+                          Workshop</h3>
+                        <p class="text-richblack text-16 md:text-18 tracking-[0.2px] leading-[26px]">Support techniques, breathwork, and
+                          emotional presence during labor</p>
+                    </div>
+                </li>
+                <li>
+                  <div class="content">
+                      <!-- <div class="badge py-[6px] px-[20px] text-14 md:text-16 text-white bg-richblack">Weeks 28–40</div> -->
+                      <h3 class="text-20 md:text-[24px] font-marcellus text-dorange">Fourth
+                        Trimester Care</h3>
+                      <p class="text-richblack text-16 md:text-18 tracking-[0.2px] leading-[26px]">Postnatal healing, breastfeeding
+                        guidance, emotional recovery, and
+                        postnatal yoga rehabilitation</p>
+                  </div>
+              </li>
+            </ul>
+        </div>
+        </div>
+      </section>
+      <section class="pb-[60px] md:pb-[86px]">
+        <div class="container">
+          <h1 class="font-marcellus text-24 md:text-[34px] !font-medium text-center text-richblack">Scientific Tools for Emotional & Fetal Well-being</h1>
+          <div class="grid md:grid-cols-3 gap-[20px] md:gap-[40px] max-w-[1100px] mx-auto mt-[50px]">
+            <div class="py-1 px-1">
+              <h2 class="text-20 md:text-[24px] font-marcellus font-medium mb-2 text-richblack">Visualization & Hypno-Birthing</h2>
+              <ul class="list-feet">
+                <li class="text-richblack text-16 md:text-18 tracking-[0.2px] mb-[10px]">Supports neural imprinting and
+                  fetal bonding</li>
+                <li class="text-richblack text-16 md:text-18 tracking-[0.2px] mb-[10px]">Helps mothers mentally rehearse
+                    a safe, confident birth</li>
+                <li class="text-richblack text-16 md:text-18 tracking-[0.2px] mb-[10px]">Enhances baby’s sensory
+                  experience inside the womb</li>
+              </ul>
+            </div>
+            <div class="py-1 px-1">
+              <h2 class="text-20 md:text-[24px] font-marcellus font-medium mb-2 text-richblack">Journaling & Somatic
+                Emotional Release</h2>
+              <ul class="list-feet">
+                <li class="text-richblack text-16 md:text-18 tracking-[0.2px] mb-[10px]">Allows mothers to release fear,
+                  anxiety, and suppressed emotions</li>
+                <li class="text-richblack text-16 md:text-18 tracking-[0.2px] mb-[10px]">Somatic writing prompts
+                  encourage body-based awareness</li>
+                <li class="text-richblack text-16 md:text-18 tracking-[0.2px] mb-[10px]">Builds clarity and emotional
+                  resilience throughout pregnancy</li>
+              </ul>
+            </div>
+            <div class="py-1 px-1">
+              <h2 class="text-20 md:text-[24px] font-marcellus font-medium mb-2 text-richblack">Affirmations &
+                Thought Programming</h2>
+              <ul class="list-feet">
+                <li class="text-richblack text-16 md:text-18 tracking-[0.2px] mb-[10px]">Positive affirmations influence
+                  maternal hormones & mood</li>
+                <li class="text-richblack text-16 md:text-18 tracking-[0.2px] mb-[10px]">Helps rewire fear-based
+                  narratives around childbirth</li>
+                <li class="text-richblack text-16 md:text-18 tracking-[0.2px] mb-[10px]">Used weekly to build
+                  confidence,
+                  joy, and spiritual connection</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-[60px] bg-[#444444]">
+        <div class="container">
+          <div>
+              <h2 class="text-[22px] md:text-[26px] font-semibold text-[#fff] font-marcellus text-center">
+                Know Your Host
+              </h2>
+              <div class="w-[100px] bg-white rounded-full h-[3px] mx-auto mt-2"></div>
+              <div class="grid md:grid-cols-2 gap-4 md:gap-2 mt-[40px] md:mt-[50px] items-center">
+                <img src="img/mentor.webp" class="md:max-w-[450px] rounded-2xl mx-auto" alt="">
+                <div class="">
+                  <p class="text-16 md:text-18 leading-[26px] tracking-[0.2px] text-white mb-2">Namaste, I’m Pooja V Nair, founder of <span class="font-semibold">Garbh Wisdom Academy</span>.</p>
+                  <p class="text-16 md:text-18 leading-[26px] tracking-[0.2px] text-white mb-2">I work with expecting and new mothers as a Prenatal & Postnatal Yoga Teacher and Childbirth Educator, blending modern evidence-based knowledge with the timeless wisdom of Garbh Sanskar.</p>
+                  <p class="text-16 md:text-18 leading-[26px] tracking-[0.2px] text-white mb-2">Over the years, I’ve seen one thing very clearly — a well-prepared birth partner changes everything. A calm, confident supporter can turn fear into courage, pain into manageable effort, and uncertainty into trust.</p>
+                  <p class="text-16 md:text-18 leading-[26px] tracking-[0.2px] text-white mb-2">That’s why I created this Partner Workshop — to give you and your chosen birth companion the tools, confidence, and connection you need for a positive birth experience.</p>
+                  
+                </div>
+              </div>
+             
+          </div>
+
+        </div>
+      </section>
+      <section class="pb-[20px] pt-[30px] md:pt-[60px] testimonial-section overflow-hidden"
+      id="testimonials">
+      <div class="container">
+        <h1 class="text-[26px] md:text-[36px] text-center text-richblack font-marcellus">
+          Testimonials
+        </h1>
+        <div class="">
+          <div class="t-slider mt-[40px] lg:mt-6">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="p-2 md:p-4 rounded-[20px] bg-white border border-secondary">
+                    <img src="img/quotes.svg" loading="lazy" class="!w-[30px] !h-[30px]" alt="" />
+                    <p class="text-roseGold text-[15px] md:text-18 mt-4">
+                      Wanted to share we had our baby girl - Raya on 24th April at 10:29 PM. 
+                      Your classes and advice came extremely handy for my wife during her active labour - lamaze breathing, pelvic breathing.
+                      I thankfully had revised my notes on my way to the hospital so that I could guide her well during the time she needed me the most.
+                      Ankita also kept at it with the yoga poses a few hours before the delivery and it helped her stay calm and feel more in control.
+                      To be honest the doctors, Nurses and the staff at Motherhood were shocked and pleasantly surprised calling our baby super "cooperative" 
+                      but we knew in our own heart that it was all the prep and tips that we got from your classes.
+                      Last but not the least - If women in your class our reading this I want them to know that if their partner is aware of 
+                      their challenges, pains both physical and emotional the journey will be easier as they would not feel alone so please enroll them with you. 
+                      This is what every woman deserves for sacrificing physically and in so many ways what she does to build her family. 
+                      To all their husbands - Pooja Ma'ams class will help you be participants rather than spectators during the process and if you want someone 
+                      to do this for your daughter tomorrow you must do the same for your wife today.
+                      Most grateful to Pooja Ma'am thank you for helping us and staying with us throughout the journey including on WhatsApp hrs before the delivery. 🙏🏻🙏🏻
+                      My wife delivered in 3hrs with a first degree tear. Healed her stitches in 5 days without an epidural.
+                    </p>
+                    <p class="text-richblack text-16 md:text-18 mb-0">Rahul ji</p>
+                    <p class="text-richblack">India</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="p-2 md:p-4 rounded-[20px] bg-white border border-secondary">
+                    <img src="img/quotes.svg" loading="lazy" class="!w-[30px] !h-[30px]" alt="" />
+                    <p class="text-roseGold text-[15px] md:text-18 mt-4">
+                      My water broke at 2 am Singapore time.
+                      Immediately contractions started with high
+                      intensity (For 5 minutes, 1 minute+ long
+                      contractions). Once I reached hospital, they checked
+                      cervix and confirmed that I was 6 cms dilated. By 5
+                      am, I was 8 cms. Then by 7 am, I was 9 cms and then
+                      around 10 am, I was 10 cms. Then baby’s heart beat
+                      dropped so the Dr immediately ask me to start push
+                      during contractions multiple times and he asked me
+                      give my best each time. She was born at 10:42 am
+                      Singapore time. She had her umbilical cord around
+                      her neck and also the umbilical cord had a knot.
+                      They kept oxygen immediately after she was born
+                      and she moved immediately. My little baby, Miraya
+                      was a brave warrior and a guiding light as her name
+                      suggests. She guided mummy, daddy, nurses and
+                      doctor when she was ready and did the hardwork. It
+                      was my pleasure and honour to have been her
+                      birthing partner. God bless her ❤
+                      Thank you Pooja ji for all the support and
+                      guidance.🙏 I was truly ready both mentally and
+                      physically because of your teachings and guidance
+                      throughout my pregnancy journey. Sri Gurubhyo
+                      Namaha ♥
+                    </p>
+                    <p class="text-richblack text-16 md:text-18 mb-0">Sirisha ji</p>
+                    <p class="text-richblack">Singapore</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="p-2 md:p-4 rounded-[20px] bg-white border border-secondary">
+                    <img src="img/quotes.svg" loading="lazy" class="!w-[30px] !h-[30px]" alt="" />
+                    <p class="text-roseGold text-[15px] md:text-18 mt-4">
+                      I delivered a baby boy today, 06-02, at 3:47 AM.
+                      As I mentioned earlier, I had inconsistent contractions on 05-02 and was already 3 cm dilated in my appointment. My doctor advised me to go home, walk, and try some exercises. Throughout the day, I practiced breathing and asanas. Around 7:30 PM, the contractions became more consistent, but I still had to wait until 11:30 PM when they were 7 minutes apart and lasted 50 seconds. After consulting with the triage nurse, I was advised to come to the hospital. Upon examination, I was already 6 cm dilated. The pain intensity was intense, so I decided to go with an epidural, which I received around 1:30 AM. During contractions, I focused on pelvic breathing, which helped me manage. At 3:30 AM, the nurse checked, and I was 10 cm dilated, and my water broke around the same time. The birthing team then prepared me for the final pushes, and I was able to deliver the baby within 5 minutes.
+                      Breathing techniques turned out to be incredibly effective for me—I never imagined it would make things feel so manageable. Of course, throughout the entire process, I was also manifesting a painless experience. Thank you so much pooja ji❤🙏
+                    </p>
+                   <p class="text-richblack text-16 md:text-18 mb-0"> Kanika ji</p>
+                   <p class="text-richblack">US</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="p-2 md:p-4 rounded-[20px] bg-white border border-secondary">
+                    <img src="img/quotes.svg" loading="lazy" class="!w-[30px] !h-[30px]" alt="" />
+                    <p class="text-roseGold text-[15px] md:text-18 mt-4">
+                     I started getting contractions in front around 5 am because of which i just woke out of my sleep but i was not completely sure but was easily manageable by deep breathing technique.Then around 8 am i found blood spotting along with the fluid so i was sure this is labour signs . Then i had my breakfast and had a good relaxing bath at home . Then around 12.30 we went to doctor place and she confirmed i was in labour and 5-6 cm dilated and will be able to deliver the baby in around next 2 hrs. Then after that around 1.30 pm i felt i will not able to manage the pain but my husband supported me a lot making me remember to deep breath and after the head was down in then i was able to deliver the baby out in next 3 pushes.
+                    </p>
+                   <p class="text-richblack text-16 md:text-18 mb-0"> Urvashi ji</p>
+                   <p class="text-richblack">India</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="p-2 md:p-4 rounded-[20px] bg-white border border-secondary">
+                    <img src="img/quotes.svg" loading="lazy" class="!w-[30px] !h-[30px]" alt="" />
+                    <p class="text-roseGold text-[15px] md:text-18 mt-4">
+                      I joined your classes at 32weeks determined to try VBAC and flip my breech baby. Little did I know I would gain so much more than I asked for.
+My previous delivery was done at 34 weeks in July 2023 due severe IUGR and low AFI. I still have some trauma from that experience.
+This time I was asked to go for c section exactly at 37weeks due to apparent low AFI and the breech position. In my heart I knew my baby was fine and the fluid was adequate due to strong movements. The affirmations in class made me strongly trust my body to carry the pregnancy for longer. I explained to my family and doctor that I want to birth this baby with a more positive mental state. With a plan of careful monitoring they agreed.
+At 39 weeks I delivered a 3.28kg healthy baby girl . This time I was more confident and happy that I’d everything in my power my child. The asanas and visualizations didn’t flip my baby but I got to experience a beautiful c-section delivery. She was born healthy, given to me for skin to skin and even first latch in the OT. I cried tears of joy throughout. Also I stood up within 20 hours of my surgery and I’m walking around now. This definitely has got to do with all the exercises in classes. I think I took the best decision joining your classes.
+                    </p>
+                   <p class="text-richblack text-16 md:text-18 mb-0">Amelia ji</p>
+                   <p class="text-richblack">India</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="p-2 md:p-4 rounded-[20px] bg-white border border-secondary">
+                    <img src="img/quotes.svg" loading="lazy" class="!w-[30px] !h-[30px]" alt="" />
+                    <p class="text-roseGold text-[15px] md:text-18 mt-4">
+                      Hi Pooja Ma'am,
+                      Wanted to share we had our baby girl - Raya on 24th April at 10:29 PM. Your classes and advice came extremely handy for my wife during her active labour - lamaze breathing, pelvic breathing.
+                      I thankfully had revised my notes on my way to the hospital so that I could guide her well during the time she needed me the most.Ankita also kept at it with the yoga poses a few hours before the delivery and it helped her stay calm and feel more in control.
+                      To be honest the doctors, Nurses and the staff at Motherhood were shocked and pleasantly surprised calling our baby super "cooperative" but we knew in our own heart that it was all the prep and tips that we got from your classes.
+                      My wife delivered in 3hrs with a first degree tear. Healed her stitches in 5 days without an epidural.
+                    </p>
+                   <p class="text-richblack text-16 md:text-18 mb-0">Shweta ji</p>
+                   <p class="text-richblack">India</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="p-2 md:p-4 rounded-[20px] bg-white border border-secondary">
+                    <img src="img/quotes.svg" loading="lazy" class="!w-[30px] !h-[30px]" alt="" />
+                    <p class="text-roseGold text-[15px] md:text-18 mt-4">
+                      Allhumdullilah on 14.05.2025 I was blessed with the baby girl ❤❤❤❤. While doing C Section we came to know that Vaginal delivery was not possible in my case despite of all the efforts we have put because the Umbilical Cord was too short to proceed with.
+When I got to hear this news that we only have C Section as an option, I was very disheartened but me and my gynaecologist both discussed that doing yoga not only help in Vaginal delivery but also helps in keeping the body active, baby good health and little to no complications in the body
+I am extremely thankful to you Pooja ji for all the guidance and support. Without you this cannot be possible, the confidence I built up while doing yoga and keeping myself fit has huge impact in my health, I never had swollen legs , I was active and no pain at all in different parts of the body. I would rather say I enjoyed my pregnancy because of your help and dedication in yoga.
+Once again thanks Pooja ji☺☺☺
+                    </p>
+                   <p class="text-richblack text-16 md:text-18 mb-0">Shaesta Siddiqui ji</p>
+                   <p class="text-richblack">India</p>
+                  </div>
+                </div>
+               
+              </div>
+              <!-- <div class="swiper-button-prev hidden !md:flex"></div>
+              <div class="swiper-button-next hidden !md:flex"></div> -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
       <footer>
         <section id="contact" class="pt-[40px] md:pt-[60px] pb-[90px] md:pb-[58px] bg-primary scrollspy-section border-t border-richblack/20">
           <div class="container text-left md:text-center">
@@ -333,7 +753,64 @@
       </footer>
 
     </main>
+    
     <script src="js/jquery.min.js"></script>
+    <script>
+      // Select all elements with the class "content"
+const contents = document.querySelectorAll('.content');
+
+// Hide elements that are not in the viewport initially
+contents.forEach(content => {
+  const bottomOfObject = content.offsetTop + content.offsetHeight;
+  const bottomOfWindow = window.innerHeight;
+
+  if (bottomOfObject > bottomOfWindow) {
+    content.classList.add('hidden');
+  }
+});
+
+// Scroll event to animate elements when they come into view
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.hidden').forEach(content => {
+    const bottomOfObject = content.offsetTop + content.offsetHeight;
+    const bottomOfWindow = window.scrollY + window.innerHeight;
+
+    if (bottomOfWindow > bottomOfObject) {
+      content.style.transition = 'opacity 0.7s ease';
+      content.style.opacity = '1';
+      content.classList.remove('hidden');
+    }
+  });
+});
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      new Swiper(".t-slider .swiper", {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".t-slider .swiper-button-next",
+          prevEl: ".t-slider .swiper-button-prev",
+        },
+        pagination: {
+          el: ".t-slider .swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          640: {
+            slidesPerView: 1.5,
+          },
+          1024: {
+            slidesPerView: 2,
+          },
+        },
+      });
+    </script>
     <script src="js/tiny-slider.js"></script>
     <script src="js/app.js"></script>
     <script src="js/headroom.min.js"></script>
